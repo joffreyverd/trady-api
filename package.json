@@ -2,10 +2,12 @@
   "name": "node-template",
   "version": "1.0.0",
   "description": "",
-  "main": "/src/app.ts",
+  "main": "/src/server.ts",
   "scripts": {
-    "dev-compile": "tsc -w",
-    "dev": "nodemon build/app.js",
+    "dev:compile": "tsc -w",
+    "dev": "nodemon build/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint ."
   },
   "keywords": [],

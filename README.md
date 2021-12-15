@@ -12,7 +12,7 @@ npm install
 
 ```sh
 npm run dev
-npm run dev-compile
+npm run dev:compile
 ```
 
 ### Lint
