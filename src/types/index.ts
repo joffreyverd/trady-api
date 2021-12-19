@@ -1,13 +1,17 @@
 import firebase from 'firebase-admin/firestore';
 
-export type Position = {
-    pair: string,
-    entryPrice: number,
+export type Trade = {
+    asset: string,
+    direction: string,
+    price: number,
     quantity: number,
     userId: string,
+    positionId: string,
+    fees: number
 }
 
-export type PositionRepo = {
+export type TradeRepo = {
     getByUserId: (db: firebase.Firestore, id: string) => {},
-    create: (db: firebase.Firestore, position: Position) => {}
+    getByUserIdAndPosition: (db: firebase.Firestore, id: string, positionId: string) => {},
+    create: (db: firebase.Firestore, trade: Trade) => {}
 }

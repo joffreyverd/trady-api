@@ -1,10 +1,12 @@
 const createPosition = {
   properties: {
-    pair: { type: 'string' },
-    entryPrice: { type: 'number' },
+    asset: { type: 'string' },
+    direction: { enum: ['BUY', 'SELL'] },
+    price: { type: 'number' },
     quantity: { type: 'number' },
+    fees: { type: 'number' },
   },
-  required: ['pair', 'entryPrice', 'quantity'],
+  required: ['asset', 'direction', 'price', 'quantity'],
 };
 
 export { createPosition };

@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import createPosition from '../handlers/position/create';
-import getPositions from '../handlers/position/get';
+import getPositionList from '../handlers/positions/getPositionList';
+import getPosition from '../handlers/positions/getPosition';
 
 const router = Router();
 
-router.get('/', getPositions);
-router.post('/', createPosition);
+router.get('/', getPositionList);
+router.get('/:uid', getPosition);
 
 export default router;

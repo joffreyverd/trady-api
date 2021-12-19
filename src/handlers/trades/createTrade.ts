@@ -6,8 +6,8 @@ import { createPosition as schema } from '../../schema';
 
 const ajv = new Ajv();
 
-const createPosition = async (req: IRequest, res: Response) => {
-  const { db, positionRepo } = req.ctx!;
+const createTrade = async (req: IRequest, res: Response) => {
+  const { db, tradeRepo } = req.ctx!;
   const { body } = req;
 
   if (!ajv.validate(schema, body)) {
@@ -16,11 +16,12 @@ const createPosition = async (req: IRequest, res: Response) => {
 
   try {
     body.userId = 'abc123';
-    positionRepo.create(db, body);
+    body.positionId = '007';
+    tradeRepo.create(db, body);
     return res.status(200).json({ status: 'success!' });
   } catch (e) {
     return httpError.internalServerError(res);
   }
 };
 
-export default createPosition;
+export default createTrade;
